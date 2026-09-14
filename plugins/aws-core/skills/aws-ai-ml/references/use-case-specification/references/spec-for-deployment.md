@@ -73,7 +73,7 @@ Deploy base model
 
 Only include preferences that have a known value. Omit fields the user didn't specify or said "any" / "don't care" for.
 
-1. Present the spec to the user:
+3. Present the spec to the user:
 
 > I have put together a use case specification and saved it in [filename].
 >

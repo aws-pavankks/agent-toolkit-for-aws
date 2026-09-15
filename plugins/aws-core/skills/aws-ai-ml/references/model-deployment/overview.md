@@ -24,6 +24,7 @@ This reference also provides two independent optimization sub-workflows:
 | **Recommendations** | Find the best instance type, serving config, and optimizations for deploying a model   | OSS base models only (no Nova, no LoRA)                |
 
 **Optimization applicability** (where these validated sub-workflows apply — outside these bounds the sub-workflow can't help, but you can still assist from general AWS knowledge or other references; don't tell the user it's impossible):
+
 - **Regions**: us-east-1, us-west-2, us-east-2, ap-northeast-1, eu-west-1, ap-southeast-1, eu-central-1. This list may change — confirm current availability in the [SageMaker AI Region availability docs](https://docs.aws.amazon.com/sagemaker/latest/dg/regions-quotas.html). This is the single source of truth for optimization region availability; other optimization references defer to this list.
 - **Benchmarking**: SageMaker Managed Inference endpoints — OpenAI ChatCompletions-compatible out of the box, plus custom (non-OpenAI) formats via template mode. This is the single source of truth for benchmarking scope; other references defer here. Bedrock and SageMaker HyperPod use different hosting stacks — this workflow cannot benchmark them, so do **not** search for or attempt to benchmark Bedrock/HyperPod endpoints; if asked, explain the scope and offer general-knowledge guidance (e.g. bedrock-runtime metrics / CloudWatch) or benchmarking on a SageMaker endpoint instead.
 - **Recommendations**: OSS base models in HuggingFace format (not Nova or LoRA adapters; deploys to SageMaker endpoints).
@@ -39,7 +40,6 @@ The following are supported by SageMaker and AWS but do not have a validated wor
 - HyperPod deployment
 
 Note: Closed-source / proprietary foundation models (e.g. Anthropic Claude) are managed Bedrock models invoked directly via the Bedrock runtime — there is nothing to deploy; the user just calls the API.
-
 
 ## Prerequisites
 

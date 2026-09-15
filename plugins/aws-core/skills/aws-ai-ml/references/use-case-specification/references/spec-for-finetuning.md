@@ -44,6 +44,7 @@ Fine-tune
 3. **[Tenet Name]** — [Description]
 ```
 
+<!-- markdownlint-disable-next-line MD029 -->
 3. Present the spec to the user:
 
 > I have put together a use case specification and saved it in [filename].

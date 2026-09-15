@@ -116,9 +116,11 @@ Update `PLAN.md` whenever a task's status changes.
 Once the plan is approved:
 
 1. **Pre-execution region check (MANDATORY for fine-tuning plans).** If the plan includes any fine-tuning step, immediately check the user's region by running:
+
    ```
    python -c "import boto3; print(boto3.session.Session().region_name)"
    ```
+
    If the result is `None`, skip this check and continue — the sdk-getting-started skill will prompt the user to set a region later. Otherwise, check the region against the supported regions in `references/region-availability.md`. If it is NOT supported → STOP. Do NOT start executing the plan. Tell the user the blocking message from `references/region-availability.md` (substituting their region). If it IS supported → briefly confirm to the user that serverless model customization is available in their region (e.g., "Your region (`<region>`) supports serverless model customization ✅") and continue.
 
 2. Before starting a task, update its status in `PLAN.md` to 🔄 (In Progress).
